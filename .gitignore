@@ -1,4 +1,5 @@
 content/*
+!content/.gitkeep
 # Node.js / Next.js / Bun
 node_modules/
 .next/

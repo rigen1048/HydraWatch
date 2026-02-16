@@ -129,7 +129,7 @@ async def _handle_individual_delete(
 
 async def _mark_seen_then_cleanup_after_delay(
     db_path: Path | str,
-    delay_hours: float = 0.01
+    delay_hours: float = 2.0
 ) -> None:
     """
     Background task: mark all unseen → seen=1, wait, then delete all seen=1
@@ -167,7 +167,7 @@ async def _handle_daily_cleanup(conn: aiosqlite.Connection, db_path: Path) -> di
 
     # Fire background cleanup task
     asyncio.create_task(
-        _mark_seen_then_cleanup_after_delay(db_path, delay_hours=1.0)
+        _mark_seen_then_cleanup_after_delay(db_path, delay_hours=2.0)
     )
 
     return {

@@ -93,7 +93,7 @@ export async function handleAuth(request: NextRequest, mode: AuthMode) {
 
     response.cookies.set(cookieName, sessionToken, {
       httpOnly: true,
-      secure: false, // Set to true in production
+      secure: false, // LocalHost / Self host
       path: "/",
       maxAge: cookieMaxAge,
       sameSite: "lax",

@@ -1,51 +1,81 @@
 # HydraWatch
 
-**Your self-hosted, privacy-first YouTube subscription manager**
-Clean chronological feed. Total organization freedom. No algorithms. No tracking. No Google account required.
+**Your personal, self-hosted YouTube subscription manager**
+Clean. Private. Algorithm-free. Built for people who have a love-hate relationship with YouTube's edge cases — and want to win.
 
 Named **HydraWatch** from the mythical creature Hydra. Due to the love-hate relationship with this Project. (Edge case Monster)
 
-## Core Philosophy
+## At a Glance
 
-- **Channel-first, chronological viewing** — like the good old days of subscriptions
-- **Your category tree, your rules** — unlimited nesting, mix domains/subdomains/genres/moods however you like
-- **100% above board** — only official YouTube RSS feeds + intelligent, low-impact polling
-- **Fully self-hosted** — Dockerized, runs locally or on your LAN, zero cloud dependency
-- **Privacy by design** — no login to Google, works perfectly with VPNs + hardened browsers
+- **Chronological channel-based feed** — the way subscriptions used to feel
+- **Completely free-form category tree** — nest domains, subdomains, genres, moods, whatever you want
+- **100% legal & clean** — only official YouTube RSS feeds + smart polling
+- **Self-hosted + local network** — runs in Docker, accessible from any device on your Wi-Fi
+- **Privacy-first** — no Google login, no tracking, no cloud middleman
+- **Batch-first management** — CSV import (great with FreeTube exports), bulk edit/delete/re-categorize
 
-## Tech Stack
+## Why It Exists
 
-- **Backend**: FastAPI (Python) + Pydantic + HTTPX + Feedparser
-- **Frontend**: Next.js
-- **Storage**: SQLite (lightweight persistence) + Redis (caching & state)
-- **Security**: Argon2 for password hashing
-- **Deployment**: Docker + Docker Compose (single `start.sh` to rule them all)
+Because after hundreds of channels you realize:
+- YouTube wants chaos
+- You want control
+- Most alternatives either sell your soul or give you another algorithm
 
-Modern, efficient, and easy to maintain — perfect for self-hosting enthusiasts and developers alike.
+HydraWatch is the middle path: minimal UI, maximum organization freedom, zero surveillance.
 
-## Key Features
+## Quick Start
 
-- Flexible nested categories (e.g. Science → Biology → Talks | Gaming → Retro → Speedruns)
-- Built-in **ALL** view + **Uncategorized** fallback
-- **Batch operations first**: CSV import (ideal from FreeTube export), bulk domain/subdomain changes, batch delete
-- Notifications auto-expire after 15 hours once viewed → keeps your feed fresh
-- Resilient polling: survives days/weeks offline, resumes exactly where it left off
-- Simple multi-user support (username + password) for family/LAN sharing
-- Optional strict localhost mode (disable LAN access in docker-compose.yml)
-- Scales comfortably to hundreds of channels with very low resource usage
+```bash
+git clone https://github.com/your-username/hydrawatch.git
+cd hydrawatch
+chmod +x start.sh
+sudo ./start.sh          # first run (Docker permissions)
+```
 
-Full details → [FEATURES.md](./FEATURES.md)
+→ Opens http://localhost:3000 (or your LAN IP:3000)
 
-## Quick Start (≈5 minutes)
+Full setup instructions → [INSTALLATION.md](./INSTALLATION.md)
 
-1. **Prerequisites**
-   - Docker & Docker Compose
-   - Redis (run locally or via `docker run -d -p 6379:6379 redis:alpine`)
-   - Git (or download ZIP)
+## Features
 
-2. **Launch**
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/hydrawatch.git
-   cd hydrawatch
-   chmod +x start.sh
-   sudo ./start.sh          # sudo usually only needed first time for Docker group
+- Unlimited nested categories (Science → Physics → Lectures, Gaming → Retro → Speedruns…)
+- Built-in **ALL** and **Uncategorized** views
+- Notifications auto-clean after 15 hours (prevents eternal backlog)
+- Survives long offline periods — resumes exactly where it left off
+- Multi-user support with simple username/password
+- Optional localhost-only mode (disable LAN access)
+- Very conservative on YouTube servers → scales to 500+ channels comfortably
+
+Complete list → [FEATURES.md](./FEATURES.md)
+
+## Screenshots
+
+(Add your screenshots here — dashboard with tree, batch edit screen, mobile view, etc.)
+
+## Current Project Status
+
+- Actively used daily by the author
+- Technical deep-dive documentation in progress
+- **Contributions temporarily paused** until docs are complete → [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+## Tech Highlights
+
+- Docker + Docker Compose
+- Redis (fast, lightweight storage)
+- Simple file-based auth
+- Frontend: [React / Vue / …]
+- Backend: [FastAPI / Express / …]
+
+(Details in source code & upcoming docs)
+
+## Who It's For
+
+- Power users with 100–1000 subscriptions
+- People who hate algorithmic feeds
+- Privacy / self-hosting enthusiasts
+- Anyone nostalgic for the old "subscriptions" tab but with better organization
+
+Made with equal parts frustration and determination.
+
+Star it if it saves you from another hydra head.
+Open issues for war stories — the name came from them after all.

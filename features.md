@@ -1,4 +1,3 @@
-```markdown
 # Features
 
 ## Personalization Freedom
@@ -99,5 +98,9 @@ If you want the app available only on the host machine:
 1. Open the `docker-compose.yml` file
 2. Remove or comment out the line containing `HOST: 0.0.0.0` (or similar network binding)
 3. Restart with `./start.sh`
+
+### Disable Password
+- Go to user_server
+- Delete/Rename proxy.ts anything under than proxy.ts / middlware.ts
 
 Thank you for using the project!
