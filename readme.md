@@ -1,4 +1,3 @@
-```markdown
 # HydraWatch
 
 **Your self-hosted, privacy-first YouTube subscription manager**
