@@ -1,0 +1,10 @@
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../content:/content
+    restart: unless-stopped
+    user: "${UID:-1000}:${GID:-1000}" # ← The key addition (auto-uses user id for directory permission mess)
