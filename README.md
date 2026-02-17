@@ -54,7 +54,11 @@ Full setup instructions → [INSTALLATION.md](./INSTALLATION.md)
 Complete list → [FEATURES.md](./FEATURES.md)
 
 ## Screenshots / Video
-(Upcoming)
+
+
+https://github.com/user-attachments/assets/1362e02b-c949-4ae0-87bd-95a27d4292e0
+
+
 
 ## Current Project Status
 
