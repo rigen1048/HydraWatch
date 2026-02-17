@@ -1,0 +1,31 @@
+# docker-compose.yml (place this at the root of the project: ~/0Projects/Completed/WatchJoy/docker-compose.yml)
+services:
+  backend:  # Your FastAPI content_server
+    build:
+      context: ./content_server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"  # Optional: expose if you want direct API access (e.g., for testing)
+    volumes:
+      - ./content:/content  # Bind mount the shared content directory
+    user: "${UID:-1000}:${GID:-1000}"  # Critical for rootless Docker + bind mount writes
+    restart: unless-stopped
+
+  frontend:  # Your Next.js user_server
+    build:
+      context: ./user_server
+      dockerfile: Dockerfile
+      network: host # ← This enables host network during build to access your local Redis
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      REDIS_URL: redis://localhost:6379 # Correct protocol (redis:// not http://)
+      REDIS_DB_GENERAL: "0" # For redisDb0 (e.g., general use)
+      REDIS_DB_SESSION: "1" # For redisDb1 (e.g., sessions in middleware)
+      HOSTNAME: "0.0.0.0" # Remove this, if You want the access limited to your host machine
+    network_mode: host # For runtime access to host Redis
+    restart: unless-stopped
+
+
+# No volumes: section needed (we're using bind mount, not named volumes)
