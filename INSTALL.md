@@ -1,4 +1,3 @@
-```markdown
 # Installation Guide
 
 ## Overview
@@ -140,7 +139,7 @@ Since there is currently no package manager:
 We recommend checking the GitHub repository at least once a month for updates, bug fixes, and new features.
 
 ## Troubleshooting
-
+- if any `Bun run Build` Error Shows up in building the docker compose, Install bun and then do it
 - **Docker permission errors** (Linux): Add your user to the docker group
   ```bash
   sudo usermod -aG docker $USER
