@@ -43,7 +43,7 @@ If you prefer to build the CSV manually, open a YouTube channel page, view page 
 
 ## Notification Management
 
-- Notifications (new videos) are automatically deleted **15 hours after being viewed** to prevent feed bloat
+- Notifications (new videos) are automatically deleted **2 hours after being viewed** to prevent feed bloat
 - Future plans include a "Watch Later" feature
 - The system is highly resilient: even if the server is offline for days or weeks, it will resume polling exactly where it left off and recover your last-seen state
 
