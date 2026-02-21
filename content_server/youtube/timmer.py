@@ -10,7 +10,7 @@ from typing import Optional, Tuple
 log = logging.getLogger(__name__)
 
 # 5 minutes after successful processing
-SLEEP_AFTER_PROCESS_SEC = 5 * 60
+SLEEP_AFTER_PROCESS_SEC = 10
 SLEEP_WHEN_NOTHING_SCHEDULED = 12 * 3600  # 12 hours
 SAFETY_MARGIN_SEC = 5.0
 
