@@ -30,16 +30,16 @@ Supported batch operations:
 Done exclusively via CSV import (no manual single-channel entry).
 **Note:*** This is not reproducibility. Therefore Your existing channels are not affected if new csv files doesn't include them.
 
-You can get the csv in 4 ways:
+You can get the csv in 3 ways:
 
-#### Recommended: Via [HydraTracker](https://github.com/rigen1048/HydraTracker)
+#### 1. Recommended: Via [HydraTracker](https://github.com/rigen1048/HydraTracker)
 Follow the Docs
 
-#### Full Compatibility with [Freetube](https://freetubeapp.io/)
+#### 2. Full Compatibility with [Freetube](https://freetubeapp.io/)
 
 Subscribe to channels in FreeTube, then export your subscriptions as CSV.
 
-#### Manual Import
+#### 3. Manual Import
 The CSV must follow this exact structure:
 ```csv
 Channel ID,Channel URL,Channel title
