@@ -102,6 +102,9 @@ If you want the app available only on the host machine:
 ### Disable Password
 - Go to user_server
 - Delete/Rename proxy.ts anything under than proxy.ts / middlware.ts
+- **Note:**
+  	- Sign up Page is responsible for setting up Your account, So if you are single user, First do Sign up and then remove the password
+  	- Login Page is responsible for identifying which user you are, if multiple users exists
 
 ### How to reset Your password
 - `redis-cli` in the terminal
