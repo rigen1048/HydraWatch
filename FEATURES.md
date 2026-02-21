@@ -26,12 +26,20 @@ Supported batch operations:
 - **Batch Delete** – Remove multiple channels at once
 - **Batch Change/Reset** – Update or reset domain, subdomain, or both for selected channels
 
-**Adding channels** is done exclusively via CSV import (no manual single-channel entry).
+### **Adding channels** 
+Done exclusively via CSV import (no manual single-channel entry).
+**Note:*** This is not reproducibility. Therefore Your existing channels are not affected if new csv files doesn't include them.
 
-### Recommended: Import from FreeTube
+You can get the csv in 4 ways:
+
+#### Recommended: Via [HydraTracker](https://github.com/rigen1048/HydraTracker)
+Follow the Docs
+
+#### Full Compatibility with [Freetube](https://freetubeapp.io/)
+
 Subscribe to channels in FreeTube, then export your subscriptions as CSV.
 
-### CSV Format
+#### Manual Import
 The CSV must follow this exact structure:
 ```csv
 Channel ID,Channel URL,Channel title
