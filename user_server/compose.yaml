@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host # ← This enables host network during build to access your local Redis
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      REDIS_URL: redis://localhost:6379 # Correct protocol (redis:// not http://)
+      REDIS_DB_GENERAL: "0" # For redisDb0 (e.g., general use)
+      REDIS_DB_SESSION: "1" # For redisDb1 (e.g., sessions in middleware)
+    network_mode: host # For runtime access to host Redis
+    restart: unless-stopped

@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+
+# Dependencies & caches (will be installed in container)
+node_modules
+.next
+out
+build
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Environment & secrets
+.env
+.env*
+*.local
+
+# Databases & Redis data (volume-mounted at runtime)
+*.sqlite
+*.sqlite3
+*.db
+dump.rdb
+appendonly.aof
+
+# Logs
+logs
+*.log
+
+# Editor / OS files
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Optional: exclude tests/docs if large and not needed in image
+tests/
+__tests__/
+docs/
+*.md
+!README.md
